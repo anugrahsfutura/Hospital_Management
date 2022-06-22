@@ -9,7 +9,7 @@ function Header() {
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link><Link to='/department'>DEPARTMENT</Link> </Nav.Link>
+            <Nav.Link><Link to='/department' style={{textDecoration:"none"}}>DEPARTMENT</Link> </Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
