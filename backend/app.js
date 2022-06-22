@@ -3,9 +3,11 @@ const express=require('express')
 const app=new express()
 const port=process.env.PORT || 8080 
 
-app.get('/',(req,res)=>{
-    res.send("YEh")
-})
+const employeeRouter=require('./src/routes/employeeRoutes')
+const departmentRouter=require('./src/routes/departmentRoutes')
+
+app.use('/employee',employeeRouter)
+app.use('/dept',departmentRouter)
 
 
 app.listen(port,()=>{
