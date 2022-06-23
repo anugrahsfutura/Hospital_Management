@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 
-function AddHead() {
+function AddEmployee() {
     const [image,setImage]=useState()
     const [url,seturl]=useState()
     const [preview,setpreview]=useState()
@@ -49,7 +49,7 @@ function AddHead() {
       const handleClick=async()=>{
         
         url &&
-        await axios.post(`http://localhost:8080/dept/head`,{input:input,url:url}).then((res)=>{
+        await axios.post(`http://localhost:8080/employee/addemployee`,{input:input,url:url}).then((res)=>{
           console.log(res);
   
         })
@@ -127,4 +127,4 @@ function AddHead() {
   )
 }
 
-export default AddHead
+export default AddEmployee

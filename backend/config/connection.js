@@ -17,16 +17,18 @@ const DepartmentSchema=new schema({
 })
 const HeadSchema=new schema({
     Name:String,
-    EmployeeNumber:Number,
     Age:Number,
     ProfileDescription:String,
+    EmployeeNumber:Number,
+    DepartmentName:String,
     ProfileImage:String
 })
 const EmployeeSchema=new schema({
     Name:String,
-    EmployeeNumber:Number,
     Age:Number,
     ProfileDescription:String,
+    EmployeeNumber:Number,
+    DepartmentName:String,
     ProfileImage:String
 
 })

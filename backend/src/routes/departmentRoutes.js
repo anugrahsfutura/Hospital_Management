@@ -33,7 +33,7 @@ router.get('/view/:id',(req,res)=>{
 
     })
 })
-router.post('/head',(req,res)=>{
+router.post('/head',async(req,res)=>{
     let item={
         Name:req.body.input.Name,
         Age:req.body.input.Age,
@@ -43,6 +43,9 @@ router.post('/head',(req,res)=>{
         ProfileImage:req.body.url
     };
     console.log(item);
+    let data=HeadData(item)
+    await data.save()
+    res.json("uploaded")
 
 })
 
