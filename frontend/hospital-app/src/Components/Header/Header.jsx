@@ -11,6 +11,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link><Link to='/department' style={{textDecoration:"none",color:'white'}}>DEPARTMENT</Link> </Nav.Link>
             <Nav.Link ><Link to='/view' style={{textDecoration:"none",color:'white'}}>VIEW</Link></Nav.Link>
+            <Nav.Link ><Link to='/deptHead' style={{textDecoration:"none",color:'white'}}>AddHead</Link></Nav.Link>
             <Nav.Link >Pricing</Nav.Link>
           </Nav>
         </Container>

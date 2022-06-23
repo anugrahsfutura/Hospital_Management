@@ -33,6 +33,18 @@ router.get('/view/:id',(req,res)=>{
 
     })
 })
+router.post('/head',(req,res)=>{
+    let item={
+        Name:req.body.input.Name,
+        Age:req.body.input.Age,
+        ProfileDescription:req.body.input.Description,
+        EmployeeNumber:req.body.input.employeeno,
+        DepartmentName:req.body.input.DepartmentName,
+        ProfileImage:req.body.url
+    };
+    console.log(item);
+
+})
 
 
 module.exports=router

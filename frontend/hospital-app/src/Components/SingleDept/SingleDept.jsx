@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function SingleDept() {
     const [department,setdepartment]=useState('')
@@ -24,7 +24,7 @@ function SingleDept() {
                         <h1>{department.DepartmentName}</h1>
                         <h1>{department.YearFound}</h1>
                         <h1>{department.Description}</h1>
-                        <h1>{department.Head}</h1>
+                        <h1><Link to={`/deptHead/${department.Head}`}> {department.Head}</Link></h1>
                         <img src={department.DepartmentImage} alt="" />
                     </div>
 
