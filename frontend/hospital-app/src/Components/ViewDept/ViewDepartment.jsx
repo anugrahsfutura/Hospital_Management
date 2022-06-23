@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 function ViewDepartment() {
     const [department,setdepartment]=useState([])
@@ -26,7 +27,7 @@ function ViewDepartment() {
                 <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={data.DepartmentImage} />
       <Card.Body>
-        <Card.Title>{data.DepartmentName}</Card.Title>
+        <Card.Title> <Link to={`/singleView/${data._id}`}>{data.DepartmentName}</Link></Card.Title>
         <Card.Text>
       {data.Description}
         </Card.Text>

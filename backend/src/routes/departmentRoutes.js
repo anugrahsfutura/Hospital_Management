@@ -26,6 +26,13 @@ router.get('/view',(req,res)=>{
 
     })
 })
+router.get('/view/:id',(req,res)=>{
+    const id=req.params.id
+    DepartmentData.findById(id).then((data)=>{
+        res.json(data)
+
+    })
+})
 
 
 module.exports=router

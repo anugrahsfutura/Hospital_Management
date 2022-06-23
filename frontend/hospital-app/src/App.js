@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Department from './Components/Departments/Department';
 import ViewDepartment from './Components/ViewDept/ViewDepartment';
+import SingleDept from './Components/SingleDept/SingleDept';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/department' element={<Department/>}/>
         <Route path='/view' element={<ViewDepartment/>}/>
+        <Route path='/singleView/:id' element={<SingleDept/>}/>
 
 
       </Routes>
