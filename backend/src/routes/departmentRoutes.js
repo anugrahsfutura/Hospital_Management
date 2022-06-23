@@ -1,15 +1,30 @@
 const express=require('express')
 const router=express.Router()
+const {DepartmentData,HeadData,EmployeeData}=require('./../../config/connection')
 
 
 router.get('/',(req,res)=>{
     res.send('qwert')
 })
-router.post('/',(req,res)=>{
-    let item=req.body;
+router.post('/',async(req,res)=>{
+    let item={
+        DepartmentName:req.body.input.DepartmentName,
+        YearFounded:req.body.input.YearFounded,
+        Description:req.body.input.Description,
+        Head:req.body.input.Head,
+        DepartmentImage:req.body.url
+    };
     console.log(item);
-    res.json("data submitted")
+    let data=DepartmentData(item)
+    await data.save()
+    res.json("submitted")
 
+})
+router.get('/view',(req,res)=>{
+    DepartmentData.find().then((data)=>{
+        res.json(data)
+
+    })
 })
 
 

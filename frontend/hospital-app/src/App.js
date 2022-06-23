@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Department from './Components/Departments/Department';
+import ViewDepartment from './Components/ViewDept/ViewDepartment';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
       <h1>Hospital Management</h1>
       <Routes>
         <Route path='/department' element={<Department/>}/>
+        <Route path='/view' element={<ViewDepartment/>}/>
+
 
       </Routes>
       

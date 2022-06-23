@@ -11,6 +11,7 @@ const DepartmentSchema=new schema({
     DepartmentName:String,
     YearFounded:Number,
     Description:String,
+    Head:String,
     DepartmentImage:String
 
 })
