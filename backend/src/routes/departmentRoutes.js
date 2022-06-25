@@ -61,15 +61,20 @@ router.get('/viewDept/:id',(req,res)=>{
 })
 router.get('/deptHead/:id',(req,res)=>{
     let id=req.params.id;
-    console.log(id);
-    EmployeeData.findById(id).then((data)=>{
-        console.log(data);
-        DepartmentData.findOne({DepartmentName:data.DepartmentName}).then((data)=>{
-            console.log("dept",data);
-            HeadData.findOne({Name:data.Head}).then((data)=>{
-                console.log(data);
-                res.json(data)
-            })
+    console.log("employeeID",id);
+    HeadData.findById(id).then((data)=>{
+        res.json(data)
+    })
+ 
+})
+router.get(`/gethead/:id`,(req,res)=>{
+    let id=req.params.id;
+    console.log("deptID",id);
+    DepartmentData.findById(id).then((data)=>{
+        HeadData.findOne({DepartmentName:data.DepartmentName}).then((data)=>{
+            console.log(data);
+
+            res.json(data)
         })
     })
 })

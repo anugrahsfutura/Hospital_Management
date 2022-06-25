@@ -34,7 +34,7 @@ function SingleEmployee() {
                         <h2>{employee.EmployeeNumber}</h2>
                         <h1>{employee.ProfileDescription}</h1>
                         <h1><Link to={`/deptSingle/${id}`}> {employee.employeeName}</Link></h1>
-                        <h1><Link to={`/deptHead/${employee._id}`}> {head.Name}</Link></h1>
+                        <h1><Link to={`/deptHead/${head._id}`}> {head.Name}</Link></h1>
                         <img src={employee.ProfileImage} alt=""style={{height:'250px'}} />
                     </div>
 

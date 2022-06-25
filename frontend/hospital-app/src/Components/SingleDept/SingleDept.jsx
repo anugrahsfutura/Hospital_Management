@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 
 function SingleDept() {
     const [department,setdepartment]=useState('')
+    const [head,sethead]=useState('')
     const {id}=useParams()
 
     const getData=()=>{
@@ -11,10 +12,17 @@ function SingleDept() {
             console.log(res.data);
             setdepartment(res.data)
         })
+        axios.get(`http://localhost:8080/dept/gethead/${id}`).then((res)=>{
+            console.log(res.data);
+            sethead(res.data)
+        })
     }
+    
  
     useEffect(() => {
     getData()
+
+
     console.log(id);
     }, [])
   return (
@@ -24,7 +32,7 @@ function SingleDept() {
                         <h1>{department.DepartmentName}</h1>
                         <h1>{department.YearFound}</h1>
                         <h1>{department.Description}</h1>
-                        <h1><Link to={`/deptHead/${department._id}`}> {department.Head}</Link></h1>
+                        <h1><Link to={`/deptHead/${head._id}`}> {department.Head}</Link></h1>
                         <img src={department.DepartmentImage} alt="" style={{height:'250px'}} />
                     </div>
 
