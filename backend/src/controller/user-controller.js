@@ -5,6 +5,7 @@ const JWT_SECRET_KEY = "MyKey";
 
 const signup = async (req, res, next) => {
   const { name, email, password } = req.body;
+  console.log(req.body);
   let existingUser;
   try {
     existingUser = await User.findOne({ email: email });
@@ -20,6 +21,7 @@ const signup = async (req, res, next) => {
     email: email,
     password: hashedpassword,
   });
+  console.log(user);
 
   try {
     await user.save();
