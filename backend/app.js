@@ -27,8 +27,8 @@ app.use("/api", router);
 //   .catch((err) => console.log(err));
 
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+//app.use(express.json());
+//app.use(express.urlencoded({ extended: true }));
 app.use("/employee", employeeRouter);
 app.use("/dept", departmentRouter);
 
