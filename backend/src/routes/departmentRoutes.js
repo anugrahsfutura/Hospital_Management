@@ -48,6 +48,31 @@ router.post('/head',async(req,res)=>{
     res.json("uploaded")
 
 })
+router.get('/viewDept/:id',(req,res)=>{
+    let id=req.params.id
+    console.log(id);
+    EmployeeData.findById(id).then((data)=>{
+        console.log("data",data);
+        DepartmentData.findOne({DepartmentName:data.DepartmentName}).then((data)=>{
+            console.log("new",data);
+            res.json(data)
+        })
+    })
+})
+router.get('/deptHead/:id',(req,res)=>{
+    let id=req.params.id;
+    console.log(id);
+    EmployeeData.findById(id).then((data)=>{
+        console.log(data);
+        DepartmentData.findOne({DepartmentName:data.DepartmentName}).then((data)=>{
+            console.log("dept",data);
+            HeadData.findOne({Name:data.Head}).then((data)=>{
+                console.log(data);
+                res.json(data)
+            })
+        })
+    })
+})
 
 
 module.exports=router

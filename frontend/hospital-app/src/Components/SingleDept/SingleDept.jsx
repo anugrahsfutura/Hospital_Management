@@ -24,8 +24,8 @@ function SingleDept() {
                         <h1>{department.DepartmentName}</h1>
                         <h1>{department.YearFound}</h1>
                         <h1>{department.Description}</h1>
-                        <h1><Link to={`/deptHead/${department.Head}`}> {department.Head}</Link></h1>
-                        <img src={department.DepartmentImage} alt="" />
+                        <h1><Link to={`/deptHead/${department._id}`}> {department.Head}</Link></h1>
+                        <img src={department.DepartmentImage} alt="" style={{height:'250px'}} />
                     </div>
 
         }

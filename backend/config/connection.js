@@ -4,6 +4,8 @@ mongoose.connect(url,{
     useNewUrlParser:true,
     useUnifiedTopology:true
     
+},()=>{
+    console.log(`mongoDB Connected`);
 })
 
 const schema=mongoose.Schema

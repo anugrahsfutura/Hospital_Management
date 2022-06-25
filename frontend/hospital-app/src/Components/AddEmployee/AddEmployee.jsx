@@ -92,6 +92,7 @@ function AddEmployee() {
       <Form.Group className="mb-3 w-25 text-center" controlId="formBasicPassword">
         <Form.Label>Department</Form.Label>
       <Form.Select size="sm" className=' text-center' name='DepartmentName' onChange={handleChange}>
+        <option value="yeh">choose...</option>
         {
             department.map((data)=>{
                 return(
