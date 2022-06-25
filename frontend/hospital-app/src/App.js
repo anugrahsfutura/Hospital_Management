@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import { Route, Routes } from "react-router-dom";
@@ -19,6 +18,7 @@ function App() {
       <Header />
       <h1>Hospital Management</h1>
       <Routes>
+
         <Route path="/addDepartment" element={<Department />} />
         <Route path="/viewDepartment" element={<ViewDepartment />} />
         <Route path="/singleView/:id" element={<SingleDept />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/addEmployee" element={<AddEmployee />} />
         <Route path="/viewEmployee" element={<ViewEmployee />} />
         <Route path="/employee/:id" element={<SingleEmployee />} />
-        <Route path="/deptHead/:name" element={<DeptHead />} />
+        <Route path="/deptHead/:id" element={<DeptHead />} />
         <Route path="/user" element={<Department />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

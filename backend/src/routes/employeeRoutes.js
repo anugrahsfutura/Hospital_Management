@@ -34,6 +34,17 @@ router.get(`/view/:id`,(req,res)=>{
         res.json(data)
     })
 })
+router.get(`/viewHead/:id`,(req,res)=>{
+    let id=req.params.id;
+    EmployeeData.findById(id).then((data)=>{
+        console.log(data);
+        HeadData.findOne({DepartmentName:data.DepartmentName}).then((data)=>{
+            console.log(data);
+            res.json(data)
+        })
+
+    })
+})
 
 
 module.exports=router

@@ -67,7 +67,6 @@ function Department() {
     
   return (
     <div className='text-center'>
-
          <Form onSubmit={handleClick} >
       <Form.Group className="mb-3 w-25 text-center" controlId="formBasicEmail">
         <Form.Label>Department Name</Form.Label>
