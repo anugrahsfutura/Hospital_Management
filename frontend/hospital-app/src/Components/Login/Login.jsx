@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import './Login.css'
+import "./Login.css";
 
 function Login() {
   const history = useNavigate();
@@ -33,37 +33,35 @@ function Login() {
     sendRequest().then(() => history("/user"));
   };
   return (
-<<<<<<< HEAD
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          onChange={handlechange}
-          placeholder="Enter email"
-          value={input.email}
-        />
-      </Form.Group>
+    // <Form onSubmit={handleSubmit}>
+    //   <Form.Group className="mb-3" controlId="formBasicEmail">
+    //     <Form.Label>Email address</Form.Label>
+    //     <Form.Control
+    //       type="email"
+    //       name="email"
+    //       onChange={handlechange}
+    //       placeholder="Enter email"
+    //       value={input.email}
+    //     />
+    //   </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          name="password"
-          onChange={handlechange}
-          placeholder="Password"
-          value={input.password}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Login
-      </Button>
-    </Form>
-=======
+    //   <Form.Group className="mb-3" controlId="formBasicPassword">
+    //     <Form.Label>Password</Form.Label>
+    //     <Form.Control
+    //       type="password"
+    //       name="password"
+    //       onChange={handlechange}
+    //       placeholder="Password"
+    //       value={input.password}
+    //     />
+    //   </Form.Group>
+    //   <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    //     <Form.Check type="checkbox" label="Check me out" />
+    //   </Form.Group>
+    //   <Button variant="primary" type="submit">
+    //     Login
+    //   </Button>
+    // </Form>
     <div className="login-box">
       <h2>LOGIN</h2>
       <form action="">
@@ -84,7 +82,6 @@ function Login() {
         </a>
       </form>
     </div>
->>>>>>> bb5f34c739b17340860e840a13cee524a4dea839
   );
 }
 
