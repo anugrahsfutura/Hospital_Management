@@ -16,7 +16,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Hospital Management</h1>
       <Routes>
 
         <Route path="/addDepartment" element={<Department />} />
