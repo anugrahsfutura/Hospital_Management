@@ -11,7 +11,12 @@ const port = process.env.PORT || 8080;
 
 const employeeRouter = require("./src/routes/employeeRoutes");
 const departmentRouter = require("./src/routes/departmentRoutes");
+<<<<<<< HEAD
 app.use(cors());
+=======
+// const { signup } = require("./src/controller/user-controller");
+app.use(cors({ credentials: true }));
+>>>>>>> 80ac702345cfa65200afb10782f77e4e63aef564
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
