@@ -12,8 +12,11 @@ const router = require("./src/routes/user-routes");
 const employeeRouter = require("./src/routes/employeeRoutes");
 const departmentRouter = require("./src/routes/departmentRoutes");
 // const { signup } = require("./src/controller/user-controller");
-app.use(cors())
-// app.use(cors({ credentials: true }));
+//app.use(cors())
+app.use(cors({ 
+  origin:'http://localhost:3000',
+  credentials: true 
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
