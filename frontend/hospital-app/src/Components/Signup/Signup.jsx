@@ -26,7 +26,11 @@ function Signup() {
         email: input.email,
         password: input.password,
       })
-      .catch((err) => console.log("error", err));
+      .catch((err) =>{
+        console.log("error", err)
+        alert(err.response.data.message)
+      } 
+      );
     const data = await res.data;
     return data;
   };
@@ -89,7 +93,7 @@ function Signup() {
     //   </Button>
     // </Form>
     <div className="login-box">
-      <h2>SignUp</h2>
+      <h2>SIGNUP</h2>
       <form action="" onSubmit={handleSubmit}>
         <div className="user-box">
           <input
@@ -125,12 +129,19 @@ function Signup() {
           />
           <label htmlFor="">Password</label>
         </div>
-        <a href="">
+        <a >
           <span></span>
           <span></span>
           <span></span>
           <span></span>
-          SignUp
+          <input type="submit" style={{
+            background:"transparent",
+            border:0,
+            letterSpacing:'2px',
+            transition: '0.5s',
+            color:"white",
+          }} 
+  /> 
         </a>
       </form>
     </div>

@@ -23,14 +23,21 @@ function Login() {
         email: input.email,
         password: input.password,
       })
-      .catch((err) => console.log("error", err));
+      .catch((err) =>{
+        console.log("error", err.response.data)
+        alert(err.response.data.message)
+
+      } 
+      );
     const data = await res.data;
     return data;
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input);
-    sendRequest().then(() => history("/user"));
+    sendRequest().then(() =>{
+      history("/user")
+    } )
   };
   return (
     // <div className="p-5 w-50">
@@ -78,6 +85,7 @@ function Login() {
             onChange={handlechange}
             placeholder="Enter email"
             value={input.email}
+            required
           />
           <label htmlFor="">Email</label>
         </div>
@@ -90,6 +98,7 @@ function Login() {
             onChange={handlechange}
             placeholder="Password"
             value={input.password}
+            required
           />
           <label htmlFor="">Password</label>
         </div>
@@ -98,7 +107,14 @@ function Login() {
           <span></span>
           <span></span>
           <span></span>
-          Submit
+          <input type="submit" style={{
+            background:"transparent",
+            border:0,
+            letterSpacing:'2px',
+            transition: '0.5s',
+            color:"white",
+          }} 
+  /> 
         </a>
       </form>
     </div>

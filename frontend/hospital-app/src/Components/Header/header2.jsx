@@ -11,7 +11,7 @@ function Header2() {
       <AppBar position="sticky">
         <Navbar variant="dark">
           <Container>
-            <Navbar.Brand>Navbar</Navbar.Brand>
+            <Navbar.Brand>HOSPITAL MANAGEMENT</Navbar.Brand>
             <Nav className="">
               <Box sx={{ margin: "auto" }}>
                 <Tabs
