@@ -69,7 +69,6 @@ function Header() {
                   Login
                 </Link>
               </Nav.Link> */}
-            
             </Nav>
           </Container>
         </Navbar>
