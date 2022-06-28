@@ -53,7 +53,6 @@ function Header() {
                   ViewEmployee
                 </Link>
               </Nav.Link>
-              <Nav.Link>Pricing</Nav.Link>
               {/* <Nav.Link>
                 <Link
                   to="/viewEmployee"
@@ -70,17 +69,7 @@ function Header() {
                   Login
                 </Link>
               </Nav.Link> */}
-              <Box sx={{ marginLeft: "auto" }}>
-                <Tabs
-                  indicatorColor="secondary"
-                  onChange={(e, val) => setValue(val)}
-                  value={value}
-                  textColor="inherit"
-                >
-                  <Tab to="/signup" LinkComponent={Link} label="signup" />
-                  <Tab to="/login" LinkComponent={Link} label="login" />
-                </Tabs>
-              </Box>
+            
             </Nav>
           </Container>
         </Navbar>

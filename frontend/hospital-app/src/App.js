@@ -12,11 +12,17 @@ import Signup from "./Components/Signup/Signup";
 import Login from "./Components/Login/Login";
 import Header2 from "./Components/Header/header2";
 import Header from "./Components/Header/Header";
+import { useContext } from "react";
+import { DataContext } from "./Context/Context";
 
 function App() {
+  const {UserLog}=useContext(DataContext)
+  const [loggedIN,setloggedIN]=UserLog
   return (
     <div className="App">
-      <Header2 />
+      {
+        loggedIN ? <Header2/> : <Header/>
+      }
       <Routes>
         <Route path="/loginheader" element={<Header />} />
         <Route path="/addDepartment" element={<Department />} />
