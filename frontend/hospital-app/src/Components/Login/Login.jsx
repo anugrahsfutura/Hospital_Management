@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { useContext } from "react";
+import { DataContext } from "../../Context/Context";
 
 function Login() {
+  const {UserLog}=useContext(DataContext)
+  const [loggedIN,setloggedIn]=UserLog
   const history = useNavigate();
   const [input, setInput] = useState({
     email: "",
@@ -39,6 +43,12 @@ function Login() {
       history("/user")
     } )
   };
+  useEffect(() => {
+    setloggedIn(true)
+    
+   
+  }, [])
+  
   return (
     // <div className="p-5 w-50">
     //   <Form onSubmit={handleSubmit}>

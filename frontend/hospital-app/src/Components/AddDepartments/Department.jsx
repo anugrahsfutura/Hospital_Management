@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
+import { DataContext } from "../../Context/Context";
 axios.defaults.withCredentials = true;
 
 function Department() {
+  const {UserLog}=useContext(DataContext)
+  const [loggedIN,setloggedIn]=UserLog
   const [user, setUser] = useState();
   const [image, setImage] = useState();
   const [url, seturl] = useState();
@@ -26,6 +29,7 @@ function Department() {
     return data;
   };
   useEffect(() => {
+    setloggedIn(false)
     sendRequest().then((data) => setUser(data.user));
   }, []);
   const handleChange = (e) => {
