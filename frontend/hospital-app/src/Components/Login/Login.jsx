@@ -33,55 +33,75 @@ function Login() {
     sendRequest().then(() => history("/user"));
   };
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          onChange={handlechange}
-          placeholder="Enter email"
-          value={input.email}
-        />
-      </Form.Group>
+    // <div className="p-5 w-50">
+    //   <Form onSubmit={handleSubmit}>
+    //     <Form.Group className="mb-3" controlId="formBasicEmail">
+    //       <Form.Label style={{ position: "relative" }}>
+    //         Email address
+    //       </Form.Label>
+    //       <Form.Control
+    //         type="email"
+    //         name="email"
+    //         onChange={handlechange}
+    //         placeholder="Enter email"
+    //         value={input.email}
+    //       />
+    //     </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          name="password"
-          onChange={handlechange}
-          placeholder="Password"
-          value={input.password}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Login
-      </Button>
-    </Form>
-    // <div className="login-box">
-    //   <h2>LOGIN</h2>
-    //   <form action="">
-    //     <div className="user-box">
-    //       <input type="text" name="" id="" />
-    //       <label htmlFor="">Username</label>
-    //     </div>
-    //     <div className="user-box">
-    //       <input type="password" name="" id="" />
-    //       <label htmlFor="">Password</label>
-    //     </div>
-    //     <a href="">
-    //       <span></span>
-    //       <span></span>
-    //       <span></span>
-    //       <span></span>
-    //       Submit
-    //     </a>
-    //   </form>
+    //     <Form.Group className="mb-3" controlId="formBasicPassword">
+    //       <Form.Label>Password</Form.Label>
+    //       <Form.Control
+    //         type="password"
+    //         name="password"
+    //         onChange={handlechange}
+    //         placeholder="Password"
+    //         value={input.password}
+    //       />
+    //     </Form.Group>
+    //     <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    //       <Form.Check type="checkbox" label="Check me out" />
+    //     </Form.Group>
+    //     <Button variant="primary" type="submit">
+    //       Login
+    //     </Button>
+    //   </Form>
     // </div>
+    <div className="login-box">
+      <h2>LOGIN</h2>
+      <form action="" onSubmit={handleSubmit}>
+        <div className="user-box">
+          <input
+            type="email"
+            name="email"
+            className="user-box1"
+            id=""
+            onChange={handlechange}
+            placeholder="Enter email"
+            value={input.email}
+          />
+          <label htmlFor="">Email</label>
+        </div>
+        <div className="user-box">
+          <input
+            type="password"
+            className="user-box1"
+            name="password"
+            id=""
+            onChange={handlechange}
+            placeholder="Password"
+            value={input.password}
+          />
+          <label htmlFor="">Password</label>
+        </div>
+        <a href="">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
+      </form>
+    </div>
   );
 }
 

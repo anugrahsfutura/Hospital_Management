@@ -1,5 +1,4 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
 import { Route, Routes } from "react-router-dom";
 import Department from "./Components/AddDepartments/Department";
 import ViewDepartment from "./Components/ViewDept/ViewDepartment";
@@ -11,13 +10,15 @@ import ViewEmployee from "./Components/ViewEmployee/ViewEmployee";
 import SingleEmployee from "./Components/SingleEmployee/SingleEmployee";
 import Signup from "./Components/Signup/Signup";
 import Login from "./Components/Login/Login";
+import Header2 from "./Components/Header/header2";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header2 />
       <Routes>
-
+        <Route path="/loginheader" element={<Header />} />
         <Route path="/addDepartment" element={<Department />} />
         <Route path="/viewDepartment" element={<ViewDepartment />} />
         <Route path="/singleView/:id" element={<SingleDept />} />

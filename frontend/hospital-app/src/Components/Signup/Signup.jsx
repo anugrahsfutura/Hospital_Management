@@ -36,58 +36,104 @@ function Signup() {
     sendRequest().then(() => history("/login"));
   };
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Name</Form.Label>
-        <Form.Control
-          type="name"
-          name="name"
-          onChange={handlechange}
-          placeholder="Enter email"
-          value={input.name}
-        />
-      </Form.Group>
-      {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Last Name</Form.Label>
-        <Form.Control
-          type="lastname"
-          name="lastname"
-          onChange={handlechange}
-          placeholder="Enter email"
-          value={input.lastname}
-        />
-      </Form.Group> */}
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          type="email"
-          name="email"
-          onChange={handlechange}
-          placeholder="Enter email"
-          value={input.email}
-        />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
+    // <Form onSubmit={handleSubmit}>
+    //   <Form.Group className="mb-3" controlId="formBasicEmail">
+    //     <Form.Label>Name</Form.Label>
+    //     <Form.Control
+    //       type="name"
+    //       name="name"
+    //       onChange={handlechange}
+    //       placeholder="Enter email"
+    //       value={input.name}
+    //     />
+    //   </Form.Group>
+    //   {/* <Form.Group className="mb-3" controlId="formBasicEmail">
+    //     <Form.Label>Last Name</Form.Label>
+    //     <Form.Control
+    //       type="lastname"
+    //       name="lastname"
+    //       onChange={handlechange}
+    //       placeholder="Enter email"
+    //       value={input.lastname}
+    //     />
+    //   </Form.Group> */}
+    //   <Form.Group className="mb-3" controlId="formBasicEmail">
+    //     <Form.Label>Email address</Form.Label>
+    //     <Form.Control
+    //       type="email"
+    //       name="email"
+    //       onChange={handlechange}
+    //       placeholder="Enter email"
+    //       value={input.email}
+    //     />
+    //     <Form.Text className="text-muted">
+    //       We'll never share your email with anyone else.
+    //     </Form.Text>
+    //   </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          name="password"
-          onChange={handlechange}
-          placeholder="Password"
-          value={input.password}
-        />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        SignUp
-      </Button>
-    </Form>
+    //   <Form.Group className="mb-3" controlId="formBasicPassword">
+    //     <Form.Label>Password</Form.Label>
+    //     <Form.Control
+    //       type="password"
+    //       name="password"
+    //       onChange={handlechange}
+    //       placeholder="Password"
+    //       value={input.password}
+    //     />
+    //   </Form.Group>
+    //   <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    //     <Form.Check type="checkbox" label="Check me out" />
+    //   </Form.Group>
+    //   <Button variant="primary" type="submit">
+    //     SignUp
+    //   </Button>
+    // </Form>
+    <div className="login-box">
+      <h2>SignUp</h2>
+      <form action="" onSubmit={handleSubmit}>
+        <div className="user-box">
+          <input
+            type="text"
+            name="name"
+            className="userbox1"
+            id=""
+            onChange={handlechange}
+            placeholder="Enter name"
+            value={input.name}
+          />
+          <label htmlFor="">Name</label>
+        </div>
+        <div className="user-box">
+          <input
+            type="text"
+            name="email"
+            id=""
+            onChange={handlechange}
+            placeholder="Enter email"
+            value={input.email}
+          />
+          <label htmlFor="">Email</label>
+        </div>
+        <div className="user-box">
+          <input
+            type="password"
+            name="password"
+            id=""
+            onChange={handlechange}
+            placeholder="Password"
+            value={input.password}
+          />
+          <label htmlFor="">Password</label>
+        </div>
+        <a href="">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          SignUp
+        </a>
+      </form>
+    </div>
   );
 }
 
