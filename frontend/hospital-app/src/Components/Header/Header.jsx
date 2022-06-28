@@ -85,6 +85,31 @@ function Header() {
           </Container>
         </Navbar>
       </AppBar>
+      <nav class="w3-sidenav w3-light-grey w3-large" style="width:30%">
+        <a href="tryit.asp-filename=tryw3css_sidenav_size.html#">Link 1</a>
+        <a href="tryit.asp-filename=tryw3css_sidenav_size.html#">Link 2</a>
+        <a href="tryit.asp-filename=tryw3css_sidenav_size.html#">Link 3</a>
+        <a href="tryit.asp-filename=tryw3css_sidenav_size.html#">Link 4</a>
+        <br />
+        <a
+          class="w3-padding-hor-16"
+          href="tryit.asp-filename=tryw3css_sidenav_size.html#"
+        >
+          Padded
+        </a>
+        <a
+          class="w3-padding-hor-24"
+          href="tryit.asp-filename=tryw3css_sidenav_size.html#"
+        >
+          Padded
+        </a>
+        <a
+          class="w3-padding-hor-32"
+          href="tryit.asp-filename=tryw3css_sidenav_size.html#"
+        >
+          Padded
+        </a>
+      </nav>
     </div>
   );
 }
