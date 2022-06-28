@@ -29,14 +29,18 @@ body {
   color: #fff;
   text-align: center;
 }
+
 .login-box .user-box {
   position: relative;
+  padding-left: 10px !important;
 }
 .login-box .user-box input {
+  padding-left: 20px !important;
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
+  border-radius: "20px" !important;
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #fff;
@@ -50,15 +54,20 @@ body {
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
+  display: none;
   pointer-events: none;
   transition: 0.5s;
 }
 /* .login-box .user-box input:valid ~ label */
 .login-box .user-box input:focus ~ label {
-  top: -20px;
-  left: 0;
+  top: -32px;
+  left: 10px;
+  display: block;
   color: #03e9f4;
-  font-size: 12px;
+  font-size: 14px;
+}
+.login-box .user-box input:focus ~ input {
+  border-radius: "20px" !important;
 }
 .login-box form a {
   position: relative;
