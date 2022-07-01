@@ -16,13 +16,11 @@ import { useContext } from "react";
 import { DataContext } from "./Context/Context";
 
 function App() {
-  const {UserLog}=useContext(DataContext)
-  const [loggedIN,setloggedIN]=UserLog
+  const { UserLog } = useContext(DataContext);
+  const [loggedIN, setloggedIN] = UserLog;
   return (
     <div className="App">
-      {
-        loggedIN ? <Header2/> : <Header/>
-      }
+      {loggedIN ? <Header2 /> : <Header />}
       <Routes>
         <Route path="/loginheader" element={<Header />} />
         <Route path="/addDepartment" element={<Department />} />

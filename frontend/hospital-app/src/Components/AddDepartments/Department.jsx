@@ -3,11 +3,12 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import { DataContext } from "../../Context/Context";
+import "../AddDepartments/Department.css";
 axios.defaults.withCredentials = true;
 
 function Department() {
-  const {UserLog}=useContext(DataContext)
-  const [loggedIN,setloggedIn]=UserLog
+  const { UserLog } = useContext(DataContext);
+  const [loggedIN, setloggedIn] = UserLog;
   const [user, setUser] = useState();
   const [image, setImage] = useState();
   const [url, seturl] = useState();
@@ -29,7 +30,7 @@ function Department() {
     return data;
   };
   useEffect(() => {
-    setloggedIn(false)
+    setloggedIn(false);
     sendRequest().then((data) => setUser(data.user));
   }, []);
   const handleChange = (e) => {
@@ -76,14 +77,11 @@ function Department() {
   });
 
   return (
-    <div className="text-center">
+    <div className="text-center form">
       {user && <h1>{user.name}</h1>}
-      <Form onSubmit={handleClick}>
-        <Form.Group
-          className="mb-3 w-25 text-center"
-          controlId="formBasicEmail"
-        >
-          <Form.Label>Department Name</Form.Label>
+      <Form onSubmit={handleClick} className="p-5">
+        <Form.Group className="mb-3 w-50 " controlId="formBasicEmail">
+          <Form.Label className="label">Department Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Department"
@@ -94,10 +92,10 @@ function Department() {
         </Form.Group>
 
         <Form.Group
-          className="mb-3 w-25 text-center"
+          className="mb-3 w-50 text-center"
           controlId="formBasicPassword"
         >
-          <Form.Label>YearFounded</Form.Label>
+          <Form.Label className="label ">YearFounded</Form.Label>
           <Form.Control
             type="text"
             placeholder="Year Founded"
@@ -107,10 +105,10 @@ function Department() {
           />
         </Form.Group>
         <Form.Group
-          className="mb-3 w-25 text-center"
+          className="mb-3 w-50 text-center"
           controlId="formBasicEmail"
         >
-          <Form.Label>Description</Form.Label>
+          <Form.Label className="label ">Description</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Department"
@@ -120,10 +118,10 @@ function Department() {
           />
         </Form.Group>
         <Form.Group
-          className="mb-3 w-25 text-center"
+          className="mb-3 w-50 text-center"
           controlId="formBasicEmail"
         >
-          <Form.Label>Department Head</Form.Label>
+          <Form.Label className="label">Department Head</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter Department"
@@ -133,10 +131,10 @@ function Department() {
           />
         </Form.Group>
         <Form.Group
-          className="mb-3 w-25 text-center"
+          className="mb-3 w-50 text-center"
           controlId="formBasicEmail"
         >
-          <Form.Label>Image</Form.Label>
+          <Form.Label className="label">Image</Form.Label>
           <Form.Control
             type="file"
             placeholder="Enter Department"
@@ -148,15 +146,18 @@ function Department() {
         {preview && (
           <img src={preview} alt="error" style={{ height: "250px" }} />
         )}
+        <div className="Button-align">
+          <div>
+            <Button variant="secondary" className="btn1" onClick={handleImage}>
+              upload
+            </Button>
+          </div>
 
-        <Button variant="secondary" onClick={handleImage}>
-          upload
-        </Button>
-
-        <div style={{ position: "relative", left: "10px" }}>
-          <Button variant="primary" className="text-left" type="submit">
-            Submit
-          </Button>
+          <div className="mt-2 btn2">
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </div>
         </div>
       </Form>
     </div>
