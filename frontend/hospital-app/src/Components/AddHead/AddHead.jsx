@@ -146,7 +146,7 @@ function AddHead() {
           </Button>
         </div>
         <div style={{ position: "relative", left: "-50px", top: "-47px" }}>
-          <Button variant="primary" className="text-left" type="submit">
+          <Button variant="primary" className="" type="submit">
             Submit
           </Button>
         </div>

@@ -1,0 +1,9 @@
+.img-fluid {
+  height: "300px" !important;
+  background-size: "100% 100%" !important ;
+  background-repeat: "no-repeat" !important;
+}
+.p-4 {
+  position: relative;
+  left: 10px;
+}

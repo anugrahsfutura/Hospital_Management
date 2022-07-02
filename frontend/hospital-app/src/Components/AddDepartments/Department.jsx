@@ -78,7 +78,7 @@ function Department() {
 
   return (
     <div className="text-center form">
-      {user && <h1>{user.name}</h1>}
+      {user && <h1 className="text-left">{user.name}</h1>}
       <Form onSubmit={handleClick} className="p-5">
         <Form.Group className="mb-3 w-50 " controlId="formBasicEmail">
           <Form.Label className="label">Department Name</Form.Label>

@@ -43,7 +43,7 @@ function ViewDepartment() {
                 </Link>
               </Card.Title>
               <Card.Text>{data.Description}</Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Button variant="primary">View</Button>
             </Card.Body>
           </Card>
         );

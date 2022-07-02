@@ -1,0 +1,19 @@
+.employee {
+  display: flex;
+  justify-content: center !important;
+}
+.submitButton {
+  font-size: 19px !important;
+  text-align: center !important;
+}
+.employeecard {
+  position: relative;
+  left: 350px;
+  margin-top: 50px;
+}
+.card-body {
+  width: 50%;
+  text-align: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+}

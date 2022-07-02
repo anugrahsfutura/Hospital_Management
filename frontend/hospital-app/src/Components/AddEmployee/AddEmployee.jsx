@@ -72,7 +72,7 @@ function AddEmployee() {
           className="mb-3 w-50 text-center"
           controlId="formBasicEmail"
         >
-          <Form.Label> Name</Form.Label>
+          <Form.Label className="label"> Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Provide Name"
@@ -85,7 +85,7 @@ function AddEmployee() {
           className="mb-3 w-50 text-center"
           controlId="formBasicEmail"
         >
-          <Form.Label>Employee Number</Form.Label>
+          <Form.Label className="label">Employee Number</Form.Label>
           <Form.Control
             type="text"
             placeholder="Provide EmployeeNumber"
@@ -99,7 +99,7 @@ function AddEmployee() {
           className="mb-3 w-50 text-center"
           controlId="formBasicPassword"
         >
-          <Form.Label>Age</Form.Label>
+          <Form.Label className="label">Age</Form.Label>
           <Form.Control
             type="text"
             placeholder="Provide Age"
@@ -112,7 +112,7 @@ function AddEmployee() {
           className="mb-3 w-50 text-center"
           controlId="formBasicEmail"
         >
-          <Form.Label>Description</Form.Label>
+          <Form.Label className="label">Description</Form.Label>
           <Form.Control
             type="text"
             placeholder="Provide Description"
@@ -126,7 +126,7 @@ function AddEmployee() {
           className="mb-3 w-50 text-center"
           controlId="formBasicPassword"
         >
-          <Form.Label>Department</Form.Label>
+          <Form.Label className="label">Department</Form.Label>
           <Form.Select
             size="sm"
             className=" text-center"
@@ -147,7 +147,7 @@ function AddEmployee() {
           className="mb-3 w-50 text-center"
           controlId="formBasicEmail"
         >
-          <Form.Label>Image</Form.Label>
+          <Form.Label className="label">Image</Form.Label>
           <Form.Control
             type="file"
             placeholder="Enter Department"
@@ -159,13 +159,13 @@ function AddEmployee() {
         {preview && (
           <img src={preview} alt="error" style={{ height: "250px" }} />
         )}
-
-        <Button variant="secondary" onClick={handleImage}>
-          upload
-        </Button>
-
-        <div style={{ position: "relative", left: "10px" }}>
-          <Button variant="primary" className="text-left" type="submit">
+        <div className="upload">
+          <Button variant="secondary" onClick={handleImage}>
+            upload
+          </Button>
+        </div>
+        <div className="submit">
+          <Button variant="primary" className="" type="submit">
             Submit
           </Button>
         </div>
