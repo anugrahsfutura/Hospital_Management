@@ -57,13 +57,13 @@ function SingleDept() {
                 <CardBody className="p-4">
                   {/* <CardTitle>Employee Name:{employee.Name}</CardTitle> */}
                   <CardText style={{ fontSize: "19px", textAlign: "left" }}>
-                    Department Name:{department.DepartmentName}
+                    Department Name:{" " + department.DepartmentName}
                   </CardText>
                   <CardText style={{ fontSize: "19px", textAlign: "left" }}>
-                    Year Founded:{department.YearFounded}
+                    Year Founded:{" " + department.YearFounded}
                   </CardText>
                   <CardText style={{ fontSize: "19px", textAlign: "left" }}>
-                    Description:{department.Description}
+                    Description:{" " + department.Description}
                   </CardText>
                   <CardText style={{ fontSize: "19px", textAlign: "left" }}>
                     <Link
@@ -71,7 +71,7 @@ function SingleDept() {
                       style={{ textDecoration: "none" }}
                     >
                       {" "}
-                      Head:{department.Head}
+                      Head:{" " + department.Head}
                     </Link>
                   </CardText>
                 </CardBody>

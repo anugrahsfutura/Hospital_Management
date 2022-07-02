@@ -54,14 +54,18 @@ function DeptHead() {
           alt="Skote"
         />
         <CardBody className="m-auto">
-          <CardTitle className="mt-0 label3">Head Name:{head.Name}</CardTitle>
-          <CardText className="label3">Age:{head.Age}</CardText>
+          <CardTitle className="mt-0 label3">
+            Head Name:{" " + head.Name}
+          </CardTitle>
+          <CardText className="label3">Age:{" " + head.Age}</CardText>
           <CardText className="label3">
             <small className="text-muted">
-              Employee Number:{head.EmployeeNumber}
+              Employee Number:{" " + head.EmployeeNumber}
             </small>
           </CardText>
-          <CardText className="label3">{head.ProfileDescription}</CardText>
+          <CardText className="label3">
+            {" " + head.ProfileDescription}
+          </CardText>
         </CardBody>
       </Card>
     </Col>
