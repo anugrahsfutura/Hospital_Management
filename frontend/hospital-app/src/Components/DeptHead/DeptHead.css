@@ -1,0 +1,10 @@
+.bodyy {
+  align-items: center !important;
+  justify-content: center !important;
+  display: inline-block;
+  /* padding: 40px !important; */
+}
+.label3 {
+  text-align: center !important;
+  display: inline-block;
+}
