@@ -7,6 +7,7 @@ import { CardBody, CardText, CardTitle } from "reactstrap";
 function SingleEmployee() {
   const [employee, setemployee] = useState("");
   const [head, sethead] = useState("");
+  const [department,setdepartment]=useState({})
   const { id } = useParams();
 
   const getData = () => {
@@ -20,12 +21,19 @@ function SingleEmployee() {
       console.log(res);
       sethead(res.data);
     });
+    axios.get(`http://localhost:8080/dept/viewDept/${id}`).then((res)=>{
+      console.log(res.data,"uygug");
+      setdepartment(res.data)
+      console.log(department);
+
+    })
   };
 
   useEffect(() => {
     getData();
     getHead();
     console.log(id);
+    console.log("d",department);
   }, []);
   return (
     <div>
@@ -76,6 +84,13 @@ function SingleEmployee() {
                       Employee Number:{" " + employee.EmployeeNumber}
                     </small>
                   </CardText>
+                  <Link
+                    to={`/singleView/${department._id}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    Department: {" " + head.DepartmentName}
+                  </Link>
+                  <br />
                   <Link
                     to={`/deptHead/${head._id}`}
                     style={{ textDecoration: "none" }}

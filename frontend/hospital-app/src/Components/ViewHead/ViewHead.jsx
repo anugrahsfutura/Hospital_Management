@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 function ViewHead() {
-    const [head,sethead]=useState('')
+    const [head,sethead]=useState([])
 
     const getdata=()=>{
         axios.get(`http://localhost:8080/dept/viewhead`).then((res)=>{
@@ -32,7 +32,7 @@ function ViewHead() {
     >
       {head.map((data) => {
         return (
-          <Card style={{ width: "15rem", margin: "20px" }}>
+          <Card style={{ width: "15rem", margin: "20px" }} >
             <Card.Img variant="top" src={data.ProfileImage} />
             <Card.Body>
               <Card.Title>
