@@ -19,6 +19,9 @@ function ViewDepartment() {
   }, []);
 
   return (
+    <div>
+
+      <h1 style={{color:"blueviolet"}}>DEPARTMENTS</h1>
     <div
       style={{
         justifyContent: "center",
@@ -43,11 +46,12 @@ function ViewDepartment() {
                 </Link>
               </Card.Title>
               <Card.Text>{data.Description}</Card.Text>
-              <Button variant="primary">View</Button>
+              {/* <Button variant="primary">View</Button> */}
             </Card.Body>
           </Card>
         );
       })}
+    </div>
     </div>
   );
 }

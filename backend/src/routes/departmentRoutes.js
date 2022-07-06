@@ -67,6 +67,11 @@ router.get('/deptHead/:id',(req,res)=>{
     })
  
 })
+router.get('/viewhead',(req,res)=>{
+    HeadData.find().then((data)=>{
+        res.json(data)
+    })
+})
 router.get(`/gethead/:id`,(req,res)=>{
     let id=req.params.id;
     console.log("deptID",id);

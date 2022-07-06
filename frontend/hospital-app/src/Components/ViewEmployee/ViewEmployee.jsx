@@ -42,7 +42,7 @@ function ViewEmployee() {
                   {data.Name}
                 </Link>
               </Card.Title>
-              <Card.Text>{data.ProfileDescription}</Card.Text>
+              <Card.Text>{data.EmployeeNumber}</Card.Text>
               <div className="button">
                 <Button variant="primary" className="submitButton">
                   View

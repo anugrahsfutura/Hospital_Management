@@ -4,7 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import { DataContext } from "../../Context/Context";
 import "../AddDepartments/Department.css";
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 function Department() {
   const { UserLog } = useContext(DataContext);

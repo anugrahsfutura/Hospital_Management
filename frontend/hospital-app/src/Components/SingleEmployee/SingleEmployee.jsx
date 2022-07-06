@@ -29,6 +29,7 @@ function SingleEmployee() {
   }, []);
   return (
     <div>
+      <h1>Employee Details</h1>
       {
         // <div>
         //     <h1>{employee.Name}</h1>

@@ -31,6 +31,12 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
+    title: "View HEAD",
+    path: "/viewHead",
+    icon: <BsImageAlt />,
+    cName: "nav-text",
+  },
+  {
     title: "Add Employee",
     path: "/addEmployee",
     icon: <IoIcons.IoMdPeople />,

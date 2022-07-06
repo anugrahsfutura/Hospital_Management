@@ -28,6 +28,7 @@ function SingleDept() {
   }, []);
   return (
     <div>
+      <h1 style={{color:"blueviolet"}}>{department.DepartmentName} Department</h1>
       {
         // <div>
         //   <h1>{department.DepartmentName}</h1>
@@ -57,7 +58,7 @@ function SingleDept() {
                 <CardBody className="p-4">
                   {/* <CardTitle>Employee Name:{employee.Name}</CardTitle> */}
                   <CardText style={{ fontSize: "19px", textAlign: "left" }}>
-                    Department Name:{" " + department.DepartmentName}
+                    Department Name: <span style={{color:'burlywood'}}>{" " + department.DepartmentName}</span>
                   </CardText>
                   <CardText style={{ fontSize: "19px", textAlign: "left" }}>
                     Year Founded:{" " + department.YearFounded}

@@ -14,6 +14,8 @@ import Header2 from "./Components/Header/header2";
 import Header from "./Components/Header/Header";
 import { useContext } from "react";
 import { DataContext } from "./Context/Context";
+import Home from "./Components/Home/Home";
+import ViewHead from "./Components/ViewHead/ViewHead";
 
 function App() {
   const { UserLog } = useContext(DataContext);
@@ -22,6 +24,7 @@ function App() {
     <div className="App">
       {loggedIN ? <Header2 /> : <Header />}
       <Routes>
+        <Route path="/" element={<Home/>} />
         <Route path="/loginheader" element={<Header />} />
         <Route path="/addDepartment" element={<Department />} />
         <Route path="/viewDepartment" element={<ViewDepartment />} />
@@ -30,6 +33,7 @@ function App() {
         <Route path="/addEmployee" element={<AddEmployee />} />
         <Route path="/viewEmployee" element={<ViewEmployee />} />
         <Route path="/employee/:id" element={<SingleEmployee />} />
+        <Route path="/viewHead" element={<ViewHead/>} />
         <Route path="/deptHead/:id" element={<DeptHead />} />
         <Route path="/user" element={<Department />} />
         <Route path="/signup" element={<Signup />} />

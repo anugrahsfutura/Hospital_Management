@@ -28,6 +28,10 @@ function DeptHead() {
     //     <h2>{head.ProfileDescription}</h2>
     //     <img src={head.ProfileImage} alt="" style={{height:'250px'}}/>
     // </div>
+    <div>
+      <h1 style={{color:"blueviolet"}}>DEPARTMENT HEAD</h1>
+
+   
     <Col lg={4} className="p-3 ">
       <Card
         style={{
@@ -69,6 +73,7 @@ function DeptHead() {
         </CardBody>
       </Card>
     </Col>
+    </div>
   );
 }
 
