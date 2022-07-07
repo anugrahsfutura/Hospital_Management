@@ -84,5 +84,14 @@ router.get(`/gethead/:id`,(req,res)=>{
     })
 })
 
+router.get(`/getemployee/:id`,(req,res)=>{
+    let id=req.params.id;
+    DepartmentData.findById(id).then((data)=>{
+        console.log("department",data);
+        EmployeeData.find({DepartmentName:data.DepartmentName}).then((data)=>{
+            res.json(data)
+        })
 
+    })
+})
 module.exports=router

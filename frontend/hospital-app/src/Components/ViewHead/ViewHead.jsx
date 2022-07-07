@@ -38,10 +38,11 @@ function ViewHead() {
               <Card.Title>
                 {" "}
                 <Link
-                  to={`/singleView/${data._id}`}
+                  to={`/deptHead/${data._id}`}
                   style={{ textDecoration: "none" }}
                 >
-                  {data.Name}
+                  {data.Name}-
+                  <span style={{color:'brown'}}>{data.EmployeeNumber}</span>
                 </Link>
               </Card.Title>
               <Card.Text>{data.Description}</Card.Text>

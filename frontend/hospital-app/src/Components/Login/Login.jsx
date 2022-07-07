@@ -5,11 +5,13 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useContext } from "react";
 import { DataContext } from "../../Context/Context";
+import useAuth from './../isAuth/isAuth'
 
 function Login() {
   const {UserLog}=useContext(DataContext)
   const [loggedIN,setloggedIn]=UserLog
   const history = useNavigate();
+  // const   {login} =useAuth()
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -40,11 +42,17 @@ function Login() {
     e.preventDefault();
     console.log(input);
     sendRequest().then(() =>{
-      history("/user")
+      // login().then(()=>{
+        console.log("authenticated$");
+        history("/user")
+
+      // })
+
     } )
   };
   useEffect(() => {
     setloggedIn(true)
+    // console.log(login);
     
    
   }, [])

@@ -116,6 +116,7 @@ export default function Navbar() {
                 </li>
               );
             })}
+            <Link to={`/login`}><span style={{color:'red' ,left:'200px'}}>Logout</span></Link>
           </ul>
         </nav>
       </IconContext.Provider>
