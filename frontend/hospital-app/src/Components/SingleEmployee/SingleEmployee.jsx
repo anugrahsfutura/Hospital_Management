@@ -51,21 +51,9 @@ function SingleEmployee() {
         <Col lg={6}>
           <Card className="employeecard">
             <Row className=" align-items-center ">
-              <Col md={4}>
-                <CardImg
-                  style={{
-                    // width: "100%",
-                    height: "300px",
-                    backgroundSize: "100% 100%",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                  className="img-fluid"
-                  src={employee.ProfileImage}
-                  alt="Skote"
-                />
-              </Col>
+              
               <Col md={8}>
-                <CardBody className="card-body">
+                <CardBody className="card-body" style={{marginLeft:'75px'}}>
                   {/* <CardTitle>Employee Name:{employee.Name}</CardTitle> */}
                   <CardText>
                     <Link
@@ -98,6 +86,19 @@ function SingleEmployee() {
                     Head: {" " + head.Name}
                   </Link>
                 </CardBody>
+              </Col>
+              <Col md={4}>
+                <CardImg
+                  style={{
+                    // width: "100%",
+                    height: "300px",
+                    backgroundSize: "100% 100%",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  className="img-fluid"
+                  src={employee.ProfileImage}
+                  alt="Skote"
+                />
               </Col>
             </Row>
           </Card>

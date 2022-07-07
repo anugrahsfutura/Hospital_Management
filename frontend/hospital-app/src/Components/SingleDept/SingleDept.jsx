@@ -52,16 +52,9 @@ function SingleDept() {
         <Col lg={6}>
           <Card className="employeecard">
             <Row className=" ">
-              <Col md={4}>
-                <CardImg
-                  style={{ height: "250px" }}
-                  className="img-fluid"
-                  src={department.DepartmentImage}
-                  alt="Skote"
-                />
-              </Col>
+             
               <Col md={8}>
-                <CardBody className="p-4">
+                <CardBody className="p-4" style={{marginLeft:'75px'}}>
                   {/* <CardTitle>Employee Name:{employee.Name}</CardTitle> */}
                   <CardText style={{ fontSize: "19px", textAlign: "left" }}>
                     Department Name: <span style={{color:'burlywood'}}>{" " + department.DepartmentName}</span>
@@ -83,6 +76,14 @@ function SingleDept() {
                     <img src={head.ProfileImage} style={{width:"50px", height:"40px"}} alt="" />
                   </CardText>
                 </CardBody>
+              </Col>
+              <Col md={4 }>
+                <CardImg
+                  style={{ height: "250px"}}
+                  className="img-fluid"
+                  src={department.DepartmentImage}
+                  alt="Skote"
+                />
               </Col>
             </Row>
           </Card>
