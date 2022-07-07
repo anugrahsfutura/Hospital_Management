@@ -4,9 +4,11 @@ import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import { DataContext } from "../../Context/Context";
 import "../AddDepartments/Department.css";
+import { useNavigate } from "react-router-dom";
 // axios.defaults.withCredentials = true;
 
 function Department() {
+  const navigate=useNavigate()
   const { UserLog } = useContext(DataContext);
   const [loggedIN, setloggedIn] = UserLog;
   const [user, setUser] = useState();
@@ -70,6 +72,8 @@ function Department() {
         .post(`http://localhost:8080/dept`, { input: input, url: url })
         .then((res) => {
           console.log(res);
+          navigate('/viewDepartment')
+
         }));
   };
   useEffect(() => {

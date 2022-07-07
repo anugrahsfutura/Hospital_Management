@@ -45,7 +45,7 @@ function ViewDepartment() {
                   {data.DepartmentName}
                 </Link>
               </Card.Title>
-              <Card.Text>{data.Description}</Card.Text>
+              {/* <Card.Text>{data.Description}</Card.Text> */}
               {/* <Button variant="primary">View</Button> */}
             </Card.Body>
           </Card>
