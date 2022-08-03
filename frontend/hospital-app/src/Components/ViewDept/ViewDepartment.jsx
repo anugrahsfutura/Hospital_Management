@@ -4,72 +4,68 @@ import { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Search from "../Search/Search";
+import Pagination from "./Pagination";
+import Posts from "./Posts";
 
 function ViewDepartment() {
   const [department, setdepartment] = useState([]);
   const [dept,setdept]=useState([])
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(3);
+  const [loading, setLoading] = useState(false);
+  const [searchWord,setsearchWord]=useState('')
+
+
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const getData = () => {
-    axios.get(`http://localhost:8080/dept/view`).then((res) => {
-      console.log(res.data);
-      setdept(res.data)
-      setdepartment(res.data);
-    });
+    setLoading(true)
+    setTimeout(() => {
+      axios.get(`http://localhost:8080/dept/view`).then((res) => {
+        console.log(res.data);
+        setdept(res.data)
+        setdepartment(res.data);
+      });
+      setLoading(false)
+
+      
+    }, 5000);
+ 
   };
  
-  const handleSearch=(e)=>{
-    const searchWord=e.target.value
-    console.log(searchWord);
-    const filterdata=department.filter((data)=>data.DepartmentName.toLowerCase().includes(searchWord.toLowerCase()))
-    console.log("filter",filterdata);
-    setdepartment(filterdata)
-    if(searchWord==""){
-      setdepartment(dept)
-    }
+  const filterdata= department.filter((data)=>data.DepartmentName.toLowerCase().includes(searchWord.toLowerCase()))
+  
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filterdata.slice(indexOfFirstPost, indexOfLastPost);
+  const handleSearch=async(e)=>{
+    setsearchWord(e.target.value)
+   
   }
+
+
+
   useEffect(() => {
     getData();
    
   }, []);
 
   return (
-    <div>
+    <div >
 
-      <h1 style={{color:"blueviolet"}}>DEPARTMENTS</h1>
-      <div style={{display:'flex',justifyContent:'flex-end',margin:'1rem '}}>
-        <input type="text" placeholder="search" onChange={handleSearch}/>
-      </div>
-      
-    <div
-      style={{
-        justifyContent: "center",
-        display: "flex",
-        float: "left",
-        position: "relative",
-        left: "250px",
-      }}
-    >
-      {department.map((data) => {
-        return (
-          <Card style={{ width: "15rem", margin: "20px" }}>
-            <Card.Img variant="top" src={data.DepartmentImage} />
-            <Card.Body>
-              <Card.Title>
-                {" "}
-                <Link
-                  to={`/singleView/${data._id}`}
-                  style={{ textDecoration: "none" }}
-                >
-                  {data.DepartmentName}
-                </Link>
-              </Card.Title>
-              {/* <Card.Text>{data.Description}</Card.Text> */}
-              {/* <Button variant="primary">View</Button> */}
-            </Card.Body>
-          </Card>
-        );
-      })}
-    </div>
+     <Posts 
+     department={currentPosts}
+     handleSearch={handleSearch}
+     loading={loading} 
+     />
+     <div style={{marginTop:'400px',margin:'auto'}}>
+
+    <Pagination 
+     postsPerPage={postsPerPage}
+     totalPosts={department.length}
+     paginate={paginate}
+     />
+     </div>
     </div>
   );
 }

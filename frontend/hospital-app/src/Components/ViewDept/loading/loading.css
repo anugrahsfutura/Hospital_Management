@@ -1,0 +1,21 @@
+.loading{
+    width: 200px;
+    height: 30px;
+    border: 3px solid black;
+}
+.indicator {
+    height: 28px;
+    background-color: black;
+    animation: load 3s;
+}
+@keyframes load{
+    0% {
+        width: 0%;
+    }
+    70% {
+        width: 20%;
+    }
+    100% {
+        width: 100%;
+    }
+}

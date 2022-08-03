@@ -94,4 +94,11 @@ router.get(`/getemployee/:id`,(req,res)=>{
 
     })
 })
+router.delete('/delete/:id',(req,res)=>{
+    let id=req.params.id;
+    DepartmentData.findByIdAndDelete(id).then((data)=>{
+        res.json(data)
+    })
+
+})
 module.exports=router

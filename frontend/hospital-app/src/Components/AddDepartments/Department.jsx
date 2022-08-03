@@ -21,6 +21,7 @@ function Department() {
     Head: "",
     Description: "",
   });
+  const [head,sethead]=useState([])
 
   const sendRequest = async () => {
     const res = await axios
@@ -76,8 +77,15 @@ function Department() {
 
         }));
   };
+  const getHead=()=>{
+    axios.get(`http://localhost:8080/dept/viewhead`).then((res)=>{
+            console.log("head",res);
+            sethead(res.data)
+        })
+  }
   useEffect(() => {
     console.log(url);
+    getHead()
   });
 
   return (
@@ -126,13 +134,32 @@ function Department() {
           controlId="formBasicEmail"
         >
           <Form.Label className="label">Department Head</Form.Label>
-          <Form.Control
+          <Form.Group
+             className="mb-3 w-50 text-center"
+             controlId="formBasicSelect"
+          >
+
+          <select className="mb-3 mt-1 p-1 w-100  text-center" name="Head" onChange={handleChange}>
+            <option value="">Select Head of Department</option>
+            {
+              head.map((item)=>{
+                return(
+                  <option value={item.Name}>{item.Name}</option>
+                )
+              })
+
+
+
+            }
+          </select>
+          </Form.Group>
+          {/* <Form.Control
             type="text"
             placeholder="Enter Department"
             name="Head"
             onChange={handleChange}
             required
-          />
+          /> */}
         </Form.Group>
         <Form.Group
           className="mb-3 w-50 text-center"
